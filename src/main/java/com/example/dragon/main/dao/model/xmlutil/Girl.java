@@ -14,10 +14,10 @@ import java.util.List;
 @Data
 @XmlRootElement(name = "GIRL")
 @XmlAccessorType(XmlAccessType.FIELD)
-public class Girl {
+public class Girl<T> {
     @XmlElement(name = "NAME")
     private String name;
-    @XmlElementWrapper(name = "AGEANDSEXS")
+//    @XmlElementWrapper(name = "AGEANDSEXS")
     @XmlElement(name = "AGEANDSEX")
-    private List<AgeAndSex> ageAndSexs;
+    private T ageAndSex;
 }
