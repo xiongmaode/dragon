@@ -47,11 +47,13 @@ public class UtilController {
         girl.setAgeAndSex(ageAndSex);
         System.out.println("组装完成的对象值为：" + girl);
         //方法调用并输出
+        Girl newGirl = new Girl();
         String xml;
         try {
             xml = XmlUtil.beanToXml(girl, AgeAndSex.class);
             System.out.println("bean转成xml格式为：" + xml);
-            System.out.println("xml转成bean格式为：" + XmlUtil.xmlToBean(xml, girl, AgeAndSex.class));
+            newGirl = XmlUtil.xmlToBean(xml, newGirl, AgeAndSex.class);
+            System.out.println("xml转成bean格式为：" + newGirl);
         } catch (JAXBException e) {
             e.printStackTrace();
         }
