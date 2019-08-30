@@ -33,7 +33,16 @@ public class DesignController {
          * 模板模式（规定总体流程，开发只用关注具体实现，不用在意关键步骤）
          * Spring中的IOC、JdbcTemplate等一些模板中会使用到
          */
-        template();
+//        template();
+
+        /*
+         * 原型模式（根据原有对象创建新的对象，不用单独get、set，提高代码可读性与性能（内存操作）
+         * 分为浅克隆与深克隆；
+         * 浅克隆：复制原有对象中的参数，如果有引用类型参数会复制引用地址；
+         * 深克隆：复制原有对象参数以及引用对象）
+         * List中就使用到了原型模式，实现clone方法
+         */
+//        prototype();
     }
 
     //单例模式
@@ -61,5 +70,10 @@ public class DesignController {
         liang.goSchool();
         GoSchoolTemplate hei = new HeiTemplatePattern();
         hei.goSchool();
+    }
+
+    //原型模式
+    private static void prototype(){
+
     }
 }
