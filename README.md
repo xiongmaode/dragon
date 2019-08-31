@@ -22,9 +22,6 @@
         * controller //提供可供网页访问的方法，返回需要的信息
         * entity //redis配置文件需要的实体，把配置文件转换成实体
     * study //学习过程中练手的包，good good study,day day up!
-        * design //设计模式的探索
-            * singleton //单例模式
-            * template //模板模式
         * arraylist //自己实现一个arrayList方法
     * swagger
         * conf //swagger需要的配置文件
