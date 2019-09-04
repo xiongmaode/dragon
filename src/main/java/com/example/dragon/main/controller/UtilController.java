@@ -31,7 +31,7 @@ public class UtilController {
 //        }
 
         //判断字符串是否和数组中的值一致
-//        System.out.println(StringUtil.strIsArry("01,02,03","0"));
+//        System.out.println(StringUtil.strIsArry("01;02;03","0"));
 //        List<String> list = new ArrayList<>();
 
         //把word中的接口信息换成javabean打印出来
