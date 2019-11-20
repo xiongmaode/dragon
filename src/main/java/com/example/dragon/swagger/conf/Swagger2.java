@@ -13,7 +13,7 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 
 /**
  * Swaggger2配置文件
- * http://localhost:8888/swagger-ui.html
+ * http://localhost:port/swagger-ui.html
  *
  * @Author: Xiongmao
  * @Date: 2019-4-13
@@ -22,7 +22,8 @@ import springfox.documentation.swagger2.annotations.EnableSwagger2;
 @EnableSwagger2
 public class Swagger2 {
 
-    private static final String CONTROLLLER = "com.example.dragon.redis.controller";
+//    private static final String CONTROLLLER = "com.example.dragon.redis.controller";
+    private static final String CONTROLLLER = "com.example.dragon.main.controller";
 
     @Bean
     public Docket createRestApi() {
@@ -40,7 +41,7 @@ public class Swagger2 {
                 .title("Swagger2 APIs")
                 .description("使用标准REST API,支持对象JSON和XML.")
                 .version("1.0")
-                .contact(new Contact("Songxinwei","","songxinwei@sinosoft.com.cn"))
+                .contact(new Contact("Xiongmao","","38122061@qq.com"))
                 .build();
     }
 

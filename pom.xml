@@ -68,11 +68,11 @@
         </dependency>
 
         <!-- oracle 驱动 -->
-        <dependency>
-            <groupId>oracle</groupId>
-            <artifactId>ojdbc</artifactId>
-            <version>6</version>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>oracle</groupId>-->
+            <!--<artifactId>ojdbc</artifactId>-->
+            <!--<version>6</version>-->
+        <!--</dependency>-->
 
         <!-- fastjson 驱动 -->
         <dependency>

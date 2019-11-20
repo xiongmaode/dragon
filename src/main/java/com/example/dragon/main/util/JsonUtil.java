@@ -2,18 +2,6 @@ package com.example.dragon.main.util;
 
 import com.alibaba.fastjson.JSONObject;
 
-/**
- * 项目名称：util
- * 类名称：JsonUtil
- * 类描述：json报文转换服务,所有转json报文都用这个服务,便于后期扩展微服务和替换转json工具
- * 创建人：lidongsheng
- * 创建时间：2017年9月13日 下午3:19:21
- * 修改人：lidongsheng
- * 修改时间：2017年9月13日 下午3:19:21
- * 修改备注：
- * @version 
- *
- */
 public class JsonUtil {
 
 	

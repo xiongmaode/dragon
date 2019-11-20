@@ -5,12 +5,14 @@ import com.example.dragon.main.dao.model.xmlutil.AgeAndSex;
 import com.example.dragon.main.dao.model.xmlutil.Girl;
 import com.example.dragon.main.service.ReadExcleToBeen;
 import com.example.dragon.main.util.StringUtil;
+import com.example.dragon.main.util.TimeUtil;
 import com.example.dragon.main.util.XmlUtil;
 
 import javax.xml.bind.JAXBException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Date;
 import java.util.List;
 import java.util.function.Consumer;
 
@@ -39,24 +41,29 @@ public class UtilController {
 
         //测试XmlUtil工具类
         //组装值
-        Girl girl = new Girl();
-        girl.setName("小红");
-        AgeAndSex ageAndSex = new AgeAndSex();
-        ageAndSex.setAge("18");
-        ageAndSex.setSex("女");
-        girl.setAgeAndSex(ageAndSex);
-        System.out.println("组装完成的对象值为：" + girl);
-        //方法调用并输出
-        Girl newGirl = new Girl();
-        String xml;
-        try {
-            xml = XmlUtil.beanToXml(girl, AgeAndSex.class);
-            System.out.println("bean转成xml格式为：" + xml);
-            newGirl = XmlUtil.xmlToBean(xml, newGirl, AgeAndSex.class);
-            System.out.println("xml转成bean格式为：" + newGirl);
-        } catch (JAXBException e) {
-            e.printStackTrace();
-        }
+//        Girl girl = new Girl();
+//        girl.setName("小红");
+//        AgeAndSex ageAndSex = new AgeAndSex();
+//        ageAndSex.setAge("18");
+//        ageAndSex.setSex("女");
+//        girl.setAgeAndSex(ageAndSex);
+//        System.out.println("组装完成的对象值为：" + girl);
+//        //方法调用并输出
+//        Girl newGirl = new Girl();
+//        String xml;
+//        try {
+//            xml = XmlUtil.beanToXml(girl, AgeAndSex.class);
+//            System.out.println("bean转成xml格式为：" + xml);
+//            newGirl = XmlUtil.xmlToBean(xml, newGirl, AgeAndSex.class);
+//            System.out.println("xml转成bean格式为：" + newGirl);
+//        } catch (JAXBException e) {
+//            e.printStackTrace();
+//        }
+
+        Date date = new Date();
+        System.out.println(date);
+        String dat = TimeUtil.skipMonth(date,2);
+        System.out.println(dat);
 
     }
 }
