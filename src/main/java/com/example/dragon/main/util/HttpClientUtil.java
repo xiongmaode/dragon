@@ -40,9 +40,9 @@ public class HttpClientUtil {
      * @throws ConnectException
      */
     public static String postTemplate(String uuid, String url, Object data, String encodeType,int timeOut) throws ConnectException {
-        log.info("【uuid:" + uuid + "】调用第三方接口开始，请求接口地址:" + url);
+        log.info("【uuid:" + uuid + "】调用第三方接口地址:" + url);
         log.info("【uuid:" + uuid + "】请求报文:" + JsonUtil.bean2json(data));
-        log.info("【uuid:" + uuid + "】超时时间为:" + timeOut);
+        log.info("【uuid:" + uuid + "】请求开始，超时时间:" + timeOut);
         String resultStr = "";
         try {
             //HttpRequestFactory初始化请求参数
