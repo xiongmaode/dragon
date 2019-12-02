@@ -17,8 +17,6 @@ import java.net.ConnectException;
 @Slf4j
 public class HttpClientUtil {
 
-    private static RestTemplate restTemplate = new RestTemplate();
-
     /**
      * 禁止实例化
      */

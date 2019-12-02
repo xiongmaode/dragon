@@ -1,4 +1,4 @@
-package com.mvwchina.conf.thread;
+package com.example.dragon.conf.thread;
 
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.context.annotation.Bean;
@@ -10,7 +10,7 @@ import java.util.concurrent.Executor;
 import java.util.concurrent.ThreadPoolExecutor;
 
 /**
- * @Descrjption 线程池配置
+ * @Descrjption 线程池配置(在使用的地方新加注解 @Async("asyncServiceExecutor") 即可)
  * @Author Songxinwei
  * @Date 2019/11/28 10:51
  */
@@ -22,7 +22,7 @@ public class ExecutorConfig {
     @Bean
     public Executor asyncServiceExecutor() {
         log.info("start asyncServiceExecutor");
-        ThreadPoolTaskExecutor executor = new ThreadPoolTaskExecutor();
+        ThreadPoolTaskExecutor executor = new VisiableThreadPoolTaskExecutor();
         //配置核心线程数
         executor.setCorePoolSize(5);
         //配置最大线程数
