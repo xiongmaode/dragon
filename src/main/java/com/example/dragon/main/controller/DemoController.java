@@ -1,5 +1,6 @@
 package com.example.dragon.main.controller;
 
+import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.stream.Collectors;
@@ -13,12 +14,21 @@ import java.util.stream.Stream;
  */
 public class DemoController {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         //calendar探索
-//        Calendar calendar = Calendar.getInstance();
-//        SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-//        System.out.println(calendar.getTime());
-//        System.out.println(sdf.format(calendar.getTime()));
+        Calendar calendar = Calendar.getInstance();
+        SimpleDateFormat sdfs = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        SimpleDateFormat sdfM = new SimpleDateFormat("yyyy-MM");
+        //当前时间
+        System.out.println(sdfs.format(calendar.getTime()));
+        //自定义时间
+        calendar.setTime(sdfM.parse("2019-09"));
+        //设置为1号
+        calendar.set(Calendar.DAY_OF_MONTH, 1);
+        System.out.println("月初：" + sdfs.format(calendar.getTime()));
+        //设置为0号
+        calendar.roll(Calendar.DAY_OF_MONTH, -1);
+        System.out.println("月末：" + sdfs.format(calendar.getTime()));
 
         //lombda探索
 //        List<String> a = new ArrayList<>();
