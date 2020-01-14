@@ -32,3 +32,8 @@
 ### 项目中可能用到的一些资料
 * [Apache Maven repository](https://mvnrepository.com/)
 
+###  IDEA插件
+* MybatisX //mapper文件对应.xml文件会有个小鸟，方便查找
+* Alibaba Java Coding Guidelines //检查代码规范，参考阿里规约 
+* FindBugs-IDEA //查找代码中简单的bug
+
