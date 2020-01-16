@@ -1,0 +1,78 @@
+@page {
+    /*size: A4 landscape;*/
+    size: A4 portrait;
+    margin: 2cm;
+    @top-center {
+        content: element(header)
+    }
+    @bottom-center {
+        content: element(footer)
+    }
+
+    /*@bottom-right {*/
+    /*    margin: 10pt 0 30pt 0;*/
+    /*    border-top: .25pt solid #666;*/
+    /*    content: counter(page);*/
+    /*    font-size: 9pt;*/
+    /*}*/
+}
+
+/* first page */
+@page :first {
+    margin-top: 10cm;
+    counter-reset: record 0;
+    /*@bottom-right {*/
+    /*    margin: 10pt 0 30pt 0;*/
+    /*}*/
+}
+
+@page :first :not {
+    margin-top: 10cm;
+}
+/** 页眉 */
+.header {
+    position: running(header);
+    color: #cccccc;
+    font-family: SimSun, serif;
+    padding-top: 25pt;
+}
+
+/** 页脚 */
+.footer {
+    position: running(footer)
+}
+
+.page-number:before {
+    content: counter(page);
+}
+
+.page-count:before {
+    content: counter(page);
+}
+
+.pageNext {
+    page-break-after: always;
+}
+
+.titleStyle {
+    margin-bottom: 16pt;
+}
+.titleStyle span {
+    display: inline-block;
+}
+
+.titleStyle span:nth-child(1) {
+    width: 600px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.titleStyle .font {
+    font-size: 6pt;
+    vertical-align: super;
+}
+.text-css {
+    font-size: 14pt;
+    margin-top: 20pt;
+    margin-bottom: 40pt;
+}

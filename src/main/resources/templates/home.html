@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8"/>
+    <title th:text="${#strings.defaultString(instituteName,'北京医视界医院')}">北京医视界医院</title>
+    <link rel="stylesheet" type="text/css" href="css/page.css" th:href="@{css/page.css}"/>
+    <link rel="stylesheet" type="text/css" href="css/print.css" th:href="@{css/print.css}"/>
+    <link rel="stylesheet" type="text/css" href="css/main.css" th:href="@{css/main.css}"/>
+    <style>
+        th {
+            font-weight: 400 !important;
+            font-size: 12pt;
+        }
+        body {
+            color: #666666;
+        }
+        footer .span {
+            font-weight: 500;
+        }
+        footer li {
+            margin-bottom: 16pt;
+        }
+        .main h2{
+            margin-top: 30pt;
+            margin-bottom: 60pt;
+        }
+        body p {
+            font-size: 12pt;
+        }
+    </style>
+</head>
+<body>
+<div class="main" style="color: #333333;">
+    <h1 style="font-size: 31.5pt;" th:text="${person.orgName}">北京医视界医院</h1>
+    <h2 style="font-size: 22.5pt;">360 评估报告</h2>
+</div>
+<footer>
+    <ul th:object="${person}" style="font-size: 12pt;">
+        <li>
+            <span class="span">姓名：</span>
+            <span th:text="*{userName}"></span>
+        </li>
+        <li>
+            <span class="span">身份：</span>
+            <span th:text="*{roleName}"></span>
+        </li>
+        <li>
+            <span class="span">分数：</span>
+            <span th:text="|*{zhScore}分|"></span>
+        </li>
+        <li>
+            <span class="span">部门：</span>
+            <span th:text="*{deptName}"></span>
+        </li>
+        <li>
+            <span class="span">专业：</span>
+            <span th:text="*{majorName}"></span>
+        </li>
+        <li>
+            <span class="span">报告时间：</span>
+            <span th:text="*{createDate}"></span>
+        </li>
+    </ul>
+</footer>
+<div class='pageNext'></div>
+<h3>目录</h3>
+<dl style="margin-top: 40pt">
+    <dt class="titleStyle">
+        <span>
+            前言<font class="font">····································································································</font>
+        </span>
+        <span>3</span>
+    </dt>
+    <dd></dd>
+    <dt class="titleStyle">
+        <span>
+        一、综合情况<font class="font">····································································································</font>
+        </span>
+        <span>4</span>
+    </dt>
+    <dd></dd>
+    <dt class="titleStyle">
+        <span>
+        二、分数构成<font class="font">····································································································</font>
+        </span>
+        <span>4</span>
+    </dt>
+    <dd></dd>
+    <dt class="titleStyle">
+        <span>
+        三、核心能力<font class="font">····································································································</font>
+        </span>
+        <span>4</span>
+    </dt>
+    <dd></dd>
+    <dt class="titleStyle">
+        <span>
+        四、能力优势和待发展<font class="font">····································································································</font>
+        </span>
+        <span>6</span>
+    </dt>
+    <dd></dd>
+    <dt class="titleStyle">
+        <span>
+        五、认知差异<font class="font">····································································································</font>
+        </span>
+        <span>6</span>
+    </dt>
+    <dd></dd>
+    <dt class="titleStyle">
+        <span>
+        六、单项总结<font class="font">····································································································</font>
+        </span>
+        <span>7</span>
+    </dt>
+    <dd></dd>
+    <dt class="titleStyle">
+        <span>
+        七、开放性评语<font class="font">····································································································</font>
+        </span>
+        <span>8</span>
+    </dt>
+    <dd></dd>
+</dl>
+<div class='pageNext'></div>
+<h4>前言</h4>
+<p class="text-css">
+    这是一份关于您的 360 度评估反馈报告，汇总了与您工作密切相关的人员对您工作表现的看法。通过这种多角度的反馈，希望让您更全面地认识自己，扬长补短，持续成长！
+</p>
+<h5>
+    此报告将帮助您：
+</h5>
+<div class="text-css">
+    <p>了解周围的人，基于日常的行为表现，对您的
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">工作行为</span>
+        的评价； </p>
+    <p>将您对自己
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">能力的认知</span>
+        与其他人的认知进行比较； </p>
+    <p>确定您的
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">优势领域</span>
+        ，在后续工作中更积极的展现； </p>
+    <p>确定您的
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">待发展领域</span>
+        ，在后续工作中制定并实施发展计划； </p>
+</div>
+
+<h5>
+    理解此份报告
+</h5>
+<div class="text-css">
+    <p>保持
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">开放</span>
+        的心态，而不是防御 </p>
+    <p>请记住
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">每个人</span>
+        都有优势与待发展领域 </p>
+    <p>这些反馈所评价的是您的
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">工作行为</span>
+        ，而非针对个人</p>
+    <p>听取这些反馈，尽量
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">理解其他人</span>
+        的观点</p>
+    <p>认真地
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">考量</span>
+        这些反馈信息，不要将他们拒之门外</p>
+    <p>表达出您对这些反馈的
+        <span style="font-size: 25px;color: #4285f4; font-weight: 700;">想法与感受</span>
+    </p>
+</div>
+
+<div class='pageNext'></div>
+<div th:object="${person}">
+    <h4 th:text="|*{order}综合情况|">一、综合情况</h4>
+    <p>
+        您在本阶段中评估中综合得分为：<span th:text="*{zhScore}">5</span> 分 （满分 5 分）， 本阶段评估平均分
+        为 <span th:text="*{avgScore}">5</span> 分，您在此次评估中排名第 <span th:text="*{rank}">5</span> 名，
+        超过了 <span th:text="*{rankPerc}">42.1%</span> 的住院医师。
+    </p>
+</div>
+<div th:if="${scoreMap}" th:object="${scoreMap}">
+    <h4 style="margin-top: 40pt;" th:text="|*{order}分数构成|">二、分数构成</h4>
+    <table style="width: 99%">
+        <tr>
+            <th>评估人员</th>
+            <th>评估人数</th>
+            <th>权重</th>
+        </tr>
+        <tr th:each="score : *{scoreForm}">
+            <td th:text="${score.pRoleName}">带教老师</td>
+            <td th:text="${score.pCount}">2</td>
+            <td th:text="${score.weight}">60%</td>
+        </tr>
+    </table>
+</div>
+<div th:if="${jdDetailListMap}" th:object="${jdDetailListMap}">
+    <h4 style="margin-top: 40pt;" th:text="|*{order}核心能力|">三、核心能力</h4>
+    <h5>1、本阶段对比</h5>
+    <div style="text-align: center">
+        <img style="width: 15cm;" th:src="*{radarMap}" src="images/current-period.png" alt="本阶段对比"/>
+    </div>
+    <div class='pageNext'></div>
+    <h5>2、本阶段详情</h5>
+    <table style="width: 99%">
+        <tr th:each="jds,iterStat : *{jdDetailList}">
+            <th th:if="${iterStat.index==0}" th:each="jd : ${jds}" th:text="${jd}">带教老师</th>
+            <td th:if="${iterStat.index!=0}" th:each="jd : ${jds}" th:text="${jd}">score</td>
+        </tr>
+    </table>
+    <h5 style="margin-top: 40pt;">3、综合得分阶段变化</h5>
+    <div style="text-align: center">
+        <img style="width: 15cm;" th:src="*{barMap}" src="images/current-period.png" alt="本阶段对比"/>
+    </div>
+</div>
+<div th:if="${thirdPart}" th:object="${thirdPart}">
+    <div class='pageNext'></div>
+    <h4 th:text="|*{order}能力优势和待发展|">四、能力优势和待发展</h4>
+    <table style="width: 99%">
+        <tr>
+            <th>在他人眼中，您在以下能力最优秀</th>
+            <th>在他人眼中，您在以下能力需提升</th>
+        </tr>
+        <tr>
+            <td th:text="*{bestQtListStr}">病人照护</td>
+            <td th:text="*{worstQtListStr}">教学能力</td>
+        </tr>
+    </table>
+    <h5 style="margin-top: 40pt;">1、优势项</h5>
+    <p>优势项是您得分最高的三个评估项</p>
+    <table style="width: 99%">
+        <tr>
+            <th>评估维度</th>
+            <th>评估项</th>
+            <th>综合得分</th>
+            <th>角色均分</th>
+            <th>差值</th>
+        </tr>
+        <tr th:each="best:*{bestQList}">
+            <td th:text="${best.qtName}">病人照护</td>
+            <td th:text="${best.qContent}">对病人和家属服务周到。认真聆听他们的要求，并能为其提供 相关教育和咨询。</td>
+            <td th:text="${best.qZhScore}"></td>
+            <td th:text="${best.qAvgScore}"></td>
+            <td th:text="${best.qZhScore_qAvgScore}"></td>
+        </tr>
+    </table>
+    <div class='pageNext'></div>
+    <h5>2、待发展项</h5>
+    <p>待发展项是您得分最抵的三个评估项</p>
+    <table style="width: 99%">
+        <tr>
+            <th>评估维度</th>
+            <th>评估项</th>
+            <th>综合得分</th>
+            <th>角色均分</th>
+            <th>差值</th>
+        </tr>
+        <tr th:each="worst:*{worstQList}">
+            <td th:text="${worst.qtName}">病人照护</td>
+            <td th:text="${worst.qContent}">对病人和家属服务周到。认真聆听他们的要求，并能为其提供 相关教育和咨询。</td>
+            <td th:text="${worst.qZhScore}"></td>
+            <td th:text="${worst.qAvgScore}"></td>
+            <td th:text="${worst.qZhScore_qAvgScore}"></td>
+        </tr>
+    </table>
+</div>
+<div th:if="${cognitiveDifferencesMap}" th:object="${cognitiveDifferencesMap}">
+    <div class='pageNext'></div>
+    <h4 th:text="|*{order}认知差异|">五、认知差异</h4>
+    <div style="height: 10cm;">
+        <table class="forth-table">
+            <tr>
+                <th colspan="2" style="width: 80%;">他评</th>
+                <th rowspan="3" style="width: 20%;">自评</th>
+            </tr>
+            <tr>
+                <td>
+                    <div>潜能区</div>
+                    <div th:text="*{xy[0]}"></div>
+                </td>
+                <td>
+                    <div>优势共识区</div>
+                    <div th:text="*{xy[1]}"></div>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <div>待发展共识区</div>
+                    <div th:text="*{xy[2]}"></div>
+                </td>
+                <td>
+                    <div>盲区</div>
+                    <div th:text="*{xy[3]}"></div>
+                </td>
+            </tr>
+        </table>
+        <img src="images/arrow.png" style="position: relative;top:-8.1cm;left:2.3cm;width: 12cm;"/>
+    </div>
+    <ul>
+        <li>
+            <b>读图指引：</b>
+            <span>(注:他评为不包含自评分值的其余层级加权值。)</span>
+        </li>
+        <li>
+            <b>第一象限(优势共识区)：</b>
+            <span>自评大于等于自评均分， 且他评大于等于他评均分的维度。</span>
+        </li>
+        <li>
+            <b>第二象限(潜能区)：</b>
+            <span>自评低于自评均分， 且他评高于他评均分的维度。</span>
+        </li>
+        <li>
+            <b>第三象限(待发展共识区)：</b>
+            <span>自评低于自评均分， 且他评低于他评均分的维度。</span>
+        </li>
+        <li>
+            <b>第四象限(盲区)：</b>
+            <span>自评大于等于自评均分， 且他评低于他评均分的维度。</span>
+        </li>
+    </ul>
+    <div class='pageNext'></div>
+    <div>
+        <h5>认知差异较大的</h5>
+        <table style="width: 99%">
+            <tr>
+                <th>评估维度</th>
+                <th>评估项</th>
+                <th>综合得分</th>
+                <th>自评得分</th>
+                <th>差值</th>
+            </tr>
+            <tr th:each="qds:*{qListBeans}">
+                <td th:text="${qds.qtName}">终生学习</td>
+                <td th:text="${qds.qContent}">有较好的自主学习能力，能够根据培训过程中遇到的临床问题， 主动学习掌握临床医学知识。</td>
+                <td th:text="${qds.qZhScore}"></td>
+                <td th:text="${qds.qZpScore}"></td>
+                <td th:text="${qds.qZhScore_qZpScore}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div th:if="${qtScoreListMap}" th:object="${qtScoreListMap}">
+    <div class='pageNext'></div>
+    <h4 style="margin-top: 25pt;" th:text="|*{order}单项总结|">六、单项总结</h4>
+    <div th:if="*{scoreList}" th:each="qt,qtStat:*{scoreList}">
+        <h5 th:text="|${qtStat.count}、${qt.qtName}|">1、职业素养</h5>
+        <table style="width: 99%">
+            <tr>
+                <th>综合得分</th>
+                <th>自评得分</th>
+                <th>本阶段平均分</th>
+            </tr>
+            <tr>
+                <td th:text="${qt.qtZhScore}">4</td>
+                <td th:text="${qt.qtZpScore}">5</td>
+                <td th:text="${qt.qtAvgScore}">4.8</td>
+            </tr>
+        </table>
+        <p>评估项明细</p>
+        <table style="width: 99%">
+            <tr>
+                <th>评估项</th>
+                <th th:each="pls : *{playerRoleList}" th:text="${pls.pRoleName}">带教老师</th>
+                <th>综合得分</th>
+                <th>自评得分</th>
+                <th>平均分</th>
+            </tr>
+            <tr th:if="${questionScoreMap[qt.qtId]}" th:each="qs:${questionScoreMap[qt.qtId]}">
+                <td th:text="${#maps.containsKey(qs, 'qContent')?qs.qContent:''}"></td>
+                <td th:each="pls : *{playerRoleList}"
+                    th:text="${#maps.containsKey(qs, pls.pRoleId)?qs[pls.pRoleId]:''}"></td>
+                <td th:text="${#maps.containsKey(qs, 'qZhScore')?qs.qZhScore:''}"></td>
+                <td th:text="${#maps.containsKey(qs, 'qZpScore')?qs.qZpScore:''}"></td>
+                <td th:text="${#maps.containsKey(qs, 'qAvgScore')?qs.qAvgScore:''}"></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div th:if="${last}" th:object="${last}">
+    <div class='pageNext'></div>
+    <h4 th:text="|*{order}开放性评语|">七、开放性评语</h4>
+    <ul>
+        <li th:each="remark:*{remarkList}" th:text="${remark}">临床能力很强，团队合作需加强。</li>
+    </ul>
+</div>
+</body>
+</html>
