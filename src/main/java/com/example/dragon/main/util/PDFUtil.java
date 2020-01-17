@@ -6,7 +6,7 @@ import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.thymeleaf.TemplateEngine;
-import org.thymeleaf.context.WebContext;
+import org.thymeleaf.context.Context;
 import org.xhtmlrenderer.pdf.ITextRenderer;
 
 import javax.servlet.http.HttpServletRequest;
@@ -40,7 +40,7 @@ public class PDFUtil {
      */
     @SneakyThrows
     public void getPdf(HttpServletRequest request, HttpServletResponse response) {
-        WebContext ctx = new WebContext(request, response, request.getServletContext(), request.getLocale());
+        Context ctx = new Context();
         //TODO 获取pdf填充数据
         //*.fillContent(key, ctx);ctx.setVariable("person", person);
         String content = templateEngine.process("home", ctx);
@@ -72,13 +72,13 @@ public class PDFUtil {
         response.setHeader("Content-Disposition",
                 "attachment;filename=" + java.net.URLEncoder.encode(zipName, "UTF-8"));
         ZipOutputStream zip = new ZipOutputStream(response.getOutputStream());
-        WebContext ctx = new WebContext(request, response, request.getServletContext(), request.getLocale());
         //TODO 拿到需要循环生成的数据
         List<Map<String, String>> reportInfo = new ArrayList<>();
 
         //循环生成PDF
         for (Map<String, String> map : reportInfo) {
             ByteArrayOutputStream out = new ByteArrayOutputStream();
+            Context ctx = new Context();
             //TODO 获取pdf填充数据
             //*.fillContent(key, ctx);ctx.setVariable("person", person);
 
@@ -108,6 +108,7 @@ public class PDFUtil {
             zip.putNextEntry(entry);
             out.writeTo(zip);
             zip.closeEntry();
+            out.close();
         }
         zip.close();
     }
