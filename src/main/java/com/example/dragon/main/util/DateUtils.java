@@ -164,6 +164,10 @@ public class DateUtils {
             if (type == 1) {
                 c.add(Calendar.MONTH, month + 1);
                 c.add(Calendar.DATE, -1);
+                c.set(Calendar.HOUR_OF_DAY, 23);
+                c.set(Calendar.MINUTE, 59);
+                c.set(Calendar.SECOND, 59);
+                c.set(Calendar.MILLISECOND, 999);
             }
             str = new SimpleDateFormat(pattern).format(c.getTime());
         } catch (Exception e) {
