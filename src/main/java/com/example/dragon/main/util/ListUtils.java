@@ -10,7 +10,7 @@ import java.util.List;
  * @Author XiongMao
  * @Date 2019-8-20
  */
-public class ListUtil {
+public class ListUtils {
 
     /**
      * 按指定大小，分隔集合，将集合按规定个数分为n个部分

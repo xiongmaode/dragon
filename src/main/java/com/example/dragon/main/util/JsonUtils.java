@@ -2,13 +2,13 @@ package com.example.dragon.main.util;
 
 import com.alibaba.fastjson.JSONObject;
 
-public class JsonUtil {
+public class JsonUtils {
 
 	
 	/**
 	 * 禁止实例化
 	 */
-	private JsonUtil(){
+	private JsonUtils(){
 		
 	}
 	

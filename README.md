@@ -27,7 +27,6 @@
         * swagger
             * conf //swagger需要的配置文件
     * pom //本项目pom配置
-    * pom_more //多模块项目pom配置
 ---
 ### 项目中可能用到的一些资料
 * [Apache Maven repository](https://mvnrepository.com/)

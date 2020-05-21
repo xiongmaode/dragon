@@ -13,7 +13,7 @@ import java.io.StringWriter;
  * @Author XiongMao
  * @Date 2019-8-7
  */
-public class XmlUtil {
+public class XmlUtils {
 
     /**
      * @Description bean转成xml

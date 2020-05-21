@@ -6,7 +6,7 @@ package com.example.dragon.main.util;
  * @Author XiongMao
  * @Date 2019-7-24
  */
-public class StringUtil {
+public class StringUtils {
 
     /**
      * @Description 字符串是否包含对比，str：01;02 search：01

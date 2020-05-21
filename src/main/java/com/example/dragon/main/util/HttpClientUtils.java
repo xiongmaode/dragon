@@ -15,12 +15,12 @@ import java.net.ConnectException;
  * @version：1.0
  */
 @Slf4j
-public class HttpClientUtil {
+public class HttpClientUtils {
 
     /**
      * 禁止实例化
      */
-    private HttpClientUtil() {
+    private HttpClientUtils() {
 
     }
 
