@@ -4,9 +4,9 @@ package com.example.dragon.main.controller;
 import com.example.dragon.main.dao.model.xmlutil.AgeAndSex;
 import com.example.dragon.main.dao.model.xmlutil.Girl;
 import com.example.dragon.main.service.ReadExcleToBeen;
-import com.example.dragon.main.util.StringUtil;
-import com.example.dragon.main.util.TimeUtil;
-import com.example.dragon.main.util.XmlUtil;
+import com.example.dragon.main.util.DateUtils;
+import com.example.dragon.main.util.StringUtils;
+import com.example.dragon.main.util.XmlUtils;
 
 import javax.xml.bind.JAXBException;
 import java.text.SimpleDateFormat;
@@ -62,7 +62,7 @@ public class UtilController {
 
         Date date = new Date();
         System.out.println(date);
-        String dat = TimeUtil.skipMonth(date,2);
+        Date dat = DateUtils.getAfterTime(date,2);
         System.out.println(dat);
 
     }
