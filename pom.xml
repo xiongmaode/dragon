@@ -67,13 +67,6 @@
             <artifactId>jedis</artifactId>
         </dependency>
 
-        <!-- oracle 驱动 -->
-        <!--<dependency>-->
-            <!--<groupId>oracle</groupId>-->
-            <!--<artifactId>ojdbc</artifactId>-->
-            <!--<version>6</version>-->
-        <!--</dependency>-->
-
         <!-- fastjson 驱动 -->
         <dependency>
             <groupId>com.alibaba</groupId>
@@ -133,12 +126,12 @@
             <artifactId>jackson-datatype-problem</artifactId>
             <version>0.23.0</version>
         </dependency>
-        <dependency>
-            <groupId>com.github.ben-manes.caffeine</groupId>
-            <artifactId>guava</artifactId>
-        </dependency>
+        <!--<dependency>-->
+            <!--<groupId>com.github.ben-manes.caffeine</groupId>-->
+            <!--<artifactId>guava</artifactId>-->
+        <!--</dependency>-->
         <!--PDF依赖-->
-        <!--pagehelper分页插件-->
+        <!--Pagehelper-->
         <dependency>
             <groupId>com.github.pagehelper</groupId>
             <artifactId>pagehelper-spring-boot-starter</artifactId>
