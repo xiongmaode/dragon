@@ -75,6 +75,19 @@ public class DateUtils {
     }
 
     /**
+     * 判断两个时间相差多少分钟
+     *
+     * @param startTime
+     * @param endTime
+     * @return *分钟
+     */
+    public static long lessM(Date startTime, Date endTime) {
+        long l = endTime.getTime() - startTime.getTime();
+        long diff = l / 1000 / 60;
+        return diff;
+    }
+
+    /**
      * 获取N个月之后的日期
      *
      * @param startTime
@@ -185,4 +198,5 @@ public class DateUtils {
         Calendar c = Calendar.getInstance();
         return c.get(Calendar.YEAR);
     }
+
 }
