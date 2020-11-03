@@ -56,11 +56,10 @@ public class HttpClientUtils {
                 headers.setContentType(MediaType.APPLICATION_JSON);
                 headers.set("Accept-Charset", "utf-8");
                 HttpEntity<Object> request = new HttpEntity<>(data, headers);
-                resStr = restTemplate.postForObject(url, request, Object.class);
+                resultStr = restTemplate.postForObject(url, request, String.class);
             } else {
-                resStr = restTemplate.getForObject(url, Object.class);
+                resultStr = restTemplate.getForObject(url, String.class);
             }
-            resultStr = JsonUtils.bean2json(resStr);
         } catch (Exception e) {
             log.error("【第三方接口连接失败", e);
         } finally {
